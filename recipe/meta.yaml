@@ -1,5 +1,5 @@
 {% set name = "delaynet" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.2" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,8 +8,8 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/delaynet-{{ version }}.tar.gz
-  sha256: a894373986172fb1db07b687984f8de519609199bdd984f1e92f33aa6a6a7b38
-  
+  sha256: 7b7c9763f056c83629557bb7f7f778226184d093e64ff41e3bc8d97a2aabb0d0
+
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
