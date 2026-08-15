@@ -1,5 +1,5 @@
 {% set name = "delaynet" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/delaynet-{{ version }}.tar.gz
-  sha256: 7b7c9763f056c83629557bb7f7f778226184d093e64ff41e3bc8d97a2aabb0d0
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/delaynet-{{ version }}.tar.gz
+  sha256: 5069b426ac2754972e1066ee3ef587a4bc1b5ac8d4356024dba2e2745cb5b438
 
 build:
   noarch: python
@@ -22,13 +22,13 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - numpy
-    - scipy
-    - statsmodels
-    - scikit-learn
-    - numba
-    - infomeasure >=0.5.0
-    - python-igraph
+    - numpy >=2.0.1
+    - scipy >=1.13.0
+    - statsmodels >=0.13.3
+    - scikit-learn >=1.5.0
+    - numba >=0.59.0
+    - infomeasure >=0.6.2
+    - python-igraph >=0.11.5
     - synthatdelays >=1.0.2
 
 test:
@@ -41,6 +41,7 @@ test:
     - python {{ python_min }}
     - pip
     - pytest
+    - pytest-codspeed
   source_files:
     - tests
 
